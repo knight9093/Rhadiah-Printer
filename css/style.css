@@ -80,6 +80,57 @@ html {
 /* 1. Theme default css */
 /* line 4, ../../Arafath/CL/December/229. Restaurant (Burger)/HTML/scss/theme-default.scss */
 body {
+  margin: 0;
+  overflow: hidden;
+  height: 100vh;
+  background: linear-gradient(to bottom, #00264d, #005780); /* Gradient background */
+}
+
+#snow-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Prevent interaction */
+}
+
+.snowflake {
+  position: absolute;
+  top: -10%; /* Start above the screen */
+  color: white;
+  opacity: 0.8;
+  font-size: 10px;
+  pointer-events: none;
+  animation: fall linear infinite, swayRotate ease-in-out infinite; /* Combined sway and rotation animation */
+}
+
+@keyframes fall {
+  to {
+    top: 110%; /* Fall past the bottom of the screen */
+  }
+}
+
+@keyframes swayRotate {
+  0% {
+    transform: translateX(0) rotate(0deg); /* No sway or rotation at start */
+  }
+  25% {
+    transform: translateX(10px) rotate(90deg); /* Sway right and partial rotation */
+  }
+  50% {
+    transform: translateX(0) rotate(180deg); /* Return to center with half rotation */
+  }
+  75% {
+    transform: translateX(-10px) rotate(270deg); /* Sway left and more rotation */
+  }
+  100% {
+    transform: translateX(0) rotate(360deg); /* Back to center with full rotation */
+  }
+	  }
+
+
+body {
   font-family: 'Raleway', sans-serif;
   font-weight: normal;
   font-style: normal;
